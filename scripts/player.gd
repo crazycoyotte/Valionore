@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var weapon_sprite = $Weapon/Weapon_pivot/Shotgun
 var life = 3
 var life_max = 3
-var last_mouse_position_vector
+var last_mouse_position_vector = Vector2(0,0)
 @onready var life_bar_max = $LifeBarMax
 @onready var life_bar_actual = $LifeBarActual
 
@@ -28,7 +28,7 @@ func _physics_process(delta):
 	actual_mouse_position_vector.x = int(actual_mouse_position_vector.x)
 	actual_mouse_position_vector.y = int(actual_mouse_position_vector.y)
 	
-	if (actual_mouse_position_vector != last_mouse_position_vector):
+	if (abs(actual_mouse_position_vector.x - last_mouse_position_vector.x)) > 2 or (abs(actual_mouse_position_vector.y - last_mouse_position_vector.y) > 2):
 		look_direction = actual_mouse_position_vector
 		print (actual_mouse_position_vector)
 	else :
