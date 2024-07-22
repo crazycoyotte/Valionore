@@ -14,29 +14,30 @@ grow_vertical = 2
 script = ExtResource("1_ud4hl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(548, 328)
+position = Vector2(576, 324)
 scale = Vector2(0.631836, 0.631836)
 texture = ExtResource("2_kllvl")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_left = 489.0
-offset_top = 219.0
-offset_right = 531.0
-offset_bottom = 285.0
-scale = Vector2(2.87148, 2.87148)
+[node name="MarginContainer" type="MarginContainer" parent="Sprite2D"]
+offset_left = -60.9
+offset_top = -95.7
+offset_right = -18.9
+offset_bottom = -29.7
+scale = Vector2(2.9, 2.9)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Sprite2D/MarginContainer"]
 layout_mode = 2
 
-[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Play" type="Button" parent="Sprite2D/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Play"
 script = ExtResource("3_bynqo")
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="Sprite2D/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+
+[connection signal="pressed" from="Sprite2D/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Sprite2D/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
