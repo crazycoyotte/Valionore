@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var weapon_sprite = $Weapon/Weapon_pivot/Shotgun
 var life = 3
 var life_max = 3
+var last_mouse_position_vector
 @onready var life_bar_max = $LifeBarMax
 @onready var life_bar_actual = $LifeBarActual
 
@@ -22,7 +23,16 @@ func _physics_process(delta):
 		velocity = Vector2(0,0)
 	
 	# si le joueur vise
-	var look_direction = Input.get_vector("look_left","look_right","look_up","look_down")
+	var look_direction = Vector2(0,0)
+	var actual_mouse_position_vector = get_global_mouse_position() - global_position
+	actual_mouse_position_vector.x = int(actual_mouse_position_vector.x)
+	actual_mouse_position_vector.y = int(actual_mouse_position_vector.y)
+	
+	if (actual_mouse_position_vector != last_mouse_position_vector):
+		look_direction = actual_mouse_position_vector
+		print (actual_mouse_position_vector)
+	else :
+		look_direction = Input.get_vector("look_left","look_right","look_up","look_down")
 	if look_direction != Vector2(0,0):
 		OrientateWeapon(look_direction)
 	
@@ -31,6 +41,8 @@ func _physics_process(delta):
 		get_node("AnimatedSprite2D").play("Idle")
 	else :
 		get_node("AnimatedSprite2D").play("WalkingRight")
+		
+	last_mouse_position_vector = actual_mouse_position_vector
 	
 		
 func MovePlayer(direction):
