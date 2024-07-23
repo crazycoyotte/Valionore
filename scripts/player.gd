@@ -71,5 +71,5 @@ func player_take_damage():
 	life -= 1
 	print(life)
 	if life < 1:
-		get_tree().change_scene_to_file("res://scenes/Menu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
 

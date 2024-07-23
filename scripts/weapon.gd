@@ -12,7 +12,7 @@ func _physics_process(_delta):
 #
 #création d'un objet bullet
 func shoot():
-	const BULLET = preload("res://scenes/Bullet.tscn")
+	const BULLET = preload("res://Scenes/Bullet.tscn")
 	var new_bullet = BULLET.instantiate()
 	new_bullet.global_position = %ShootingPoint.global_position
 	new_bullet.global_rotation = %ShootingPoint.global_rotation

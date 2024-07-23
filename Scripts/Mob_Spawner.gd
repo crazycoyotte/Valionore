@@ -4,7 +4,7 @@ extends Node2D
 @onready var mobs_alive := 1
 @onready var map := get_node(("/root/Game/level0/"))
 @onready var map_spawn_areas := map.get_child(0)
-@onready var ennemy := preload("res://scenes/Zombie.tscn")
+@onready var ennemy := preload("res://Scenes/Zombie.tscn")
 var spawn_areas := []
 var last_spawn_area
 

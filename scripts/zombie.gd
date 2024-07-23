@@ -17,7 +17,7 @@ var movement_speed = 100.0
 # type d'animation
 @onready var type_of_animation = "idle"
 # ennemy en vie
-@onready var is_alive = true
+@onready var is_alive := true
 
 # cible de l'agent
 @export var target: Node2D = null
