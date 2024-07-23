@@ -1,11 +1,11 @@
 extends Node2D
 
-@onready var mobs_to_spawn = 1
-@onready var mobs_alive = 1
-@onready var map = get_node(("/root/Game/level0/"))
-@onready var map_spawn_areas = map.get_child(0)
-@onready var ennemy = preload("res://scenes/zombie.tscn")
-var spawn_areas = []
+@onready var mobs_to_spawn := 1
+@onready var mobs_alive := 1
+@onready var map := get_node(("/root/Game/level0/"))
+@onready var map_spawn_areas := map.get_child(0)
+@onready var ennemy := preload("res://Scenes/Zombie.tscn")
+var spawn_areas := []
 var last_spawn_area
 
 func _ready():
@@ -14,7 +14,7 @@ func _ready():
 			spawn_areas.append(i)
 	last_spawn_area = spawn_areas[randi() % spawn_areas.size()]
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if mobs_alive == 0:
 		mobs_to_spawn += 1
 		SpawnMob()
@@ -25,7 +25,7 @@ func _physics_process(delta):
 #Retour : rien
 #
 func SpawnMob():
-	var i = 0
+	var i := 0
 	while i < mobs_to_spawn:
 		var spawn_area = spawn_areas[randi() % spawn_areas.size()]
 		if spawn_area.name != last_spawn_area.name:

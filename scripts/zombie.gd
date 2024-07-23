@@ -17,7 +17,7 @@ var movement_speed = 100.0
 # type d'animation
 @onready var type_of_animation = "idle"
 # ennemy en vie
-@onready var is_alive = true
+@onready var is_alive := true
 
 # cible de l'agent
 @export var target: Node2D = null
@@ -35,7 +35,7 @@ func seeker_setup():
 	if target:
 		navigation_agent.target_position = target.global_position
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if is_alive:
 		if target:
 			navigation_agent.target_position = target.global_position

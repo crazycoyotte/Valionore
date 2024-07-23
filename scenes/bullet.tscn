@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cw4xnikx6eo7q"]
 
-[ext_resource type="Texture2D" uid="uid://datg860p2juh4" path="res://sprites/weapon/arrow_01e.png" id="1_7fyia"]
-[ext_resource type="Script" path="res://scripts/bullet.gd" id="1_sv0dv"]
+[ext_resource type="Script" path="res://Scripts/Bullet.gd" id="1_6sb4l"]
+[ext_resource type="Texture2D" uid="uid://datg860p2juh4" path="res://Sprites/Weapon/Arrow_01e.png" id="2_svgv3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tqyvm"]
 size = Vector2(9.83873, 3.15815)
@@ -11,7 +11,7 @@ top_level = true
 rotation = 0.372863
 collision_layer = 0
 collision_mask = 3
-script = ExtResource("1_sv0dv")
+script = ExtResource("1_6sb4l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(6.21494, -0.0396171)
@@ -21,6 +21,6 @@ shape = SubResource("RectangleShape2D_tqyvm")
 position = Vector2(5.86788, 0.0174692)
 rotation = 2.36555
 scale = Vector2(0.242966, 0.242966)
-texture = ExtResource("1_7fyia")
+texture = ExtResource("2_svgv3")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
