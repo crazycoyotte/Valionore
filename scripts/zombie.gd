@@ -35,7 +35,7 @@ func seeker_setup():
 	if target:
 		navigation_agent.target_position = target.global_position
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if is_alive:
 		if target:
 			navigation_agent.target_position = target.global_position
