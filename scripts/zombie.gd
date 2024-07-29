@@ -41,7 +41,8 @@ func _physics_process(_delta):
 			navigation_agent.target_position = target.global_position
 		if navigation_agent.is_navigation_finished():	
 			type_of_animation = "attack"
-			await 2
+			# génère une erreur et le jeu fonctionne sans problème sans ça, à voir
+			#await 2
 		else :
 			var current_agent_position = global_position
 			var next_path_position = navigation_agent.get_next_path_position()

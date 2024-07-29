@@ -1,7 +1,7 @@
 extends Area2D
 
 func _physics_process(_delta):
-	var enemies_in_range = get_overlapping_bodies()
+	var _enemies_in_range = get_overlapping_bodies()
 	
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
