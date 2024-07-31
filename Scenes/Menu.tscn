@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://t2norfbrf3rx"]
+[gd_scene load_steps=4 format=3 uid="uid://t2norfbrf3rx"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_37bpi"]
-[ext_resource type="Texture2D" uid="uid://c5djkrc33vxxb" path="res://Sprites/Image titre.jpg" id="2_ef0u7"]
+[ext_resource type="Texture2D" uid="uid://c5djkrc33vxxb" path="res://sprites/image titre.jpg" id="2_ef0u7"]
+[ext_resource type="Script" path="res://scripts/ButtonGrabFocus.gd" id="3_hovhf"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -37,6 +38,7 @@ layout_mode = 2
 [node name="Play" type="Button" parent="Sprite2D/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Play"
+script = ExtResource("3_hovhf")
 
 [node name="Options" type="Button" parent="Sprite2D/MarginContainer/VBoxContainer"]
 layout_mode = 2
