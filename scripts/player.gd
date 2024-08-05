@@ -30,7 +30,7 @@ func _physics_process(_delta):
 	
 	if (abs(actual_mouse_position_vector.x - last_mouse_position_vector.x)) > 2 or (abs(actual_mouse_position_vector.y - last_mouse_position_vector.y) > 2):
 		look_direction = actual_mouse_position_vector
-		print (actual_mouse_position_vector)
+		
 	else :
 		look_direction = Input.get_vector("look_left","look_right","look_up","look_down")
 	if look_direction != Vector2(0,0):

@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 # reference au mobspawner
-@onready var mob_spawner = get_node("/root/Game/MobSpawner")
+@onready var mob_spawner = get_node("/root/SceneSwitch/Game/MobSpawner")
 # reference au joueur
-@onready var player = get_node("/root/Game/Player")
+@onready var player = get_node("/root/SceneSwitch/Game/Player")
 # référence à l'animationdu personnage
 @onready var AnimatedSprite = $AnimatedSprite2D
 # orientation de base du personnage
@@ -24,7 +24,7 @@ var movement_speed = 100.0
 
 func _ready():
 	call_deferred("seeker_setup")
-	target = get_node("/root/Game/Player")
+	target = get_node("/root/SceneSwitch/Game/Player")
 
 # fonctions de mise en place du navmesh
 #Paramètres : aucun

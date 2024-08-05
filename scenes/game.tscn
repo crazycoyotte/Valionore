@@ -1,23 +1,23 @@
 [gd_scene load_steps=6 format=3 uid="uid://dddt40eiyduu4"]
 
-[ext_resource type="PackedScene" uid="uid://drrltky7ish4o" path="res://Scenes/Player.tscn" id="1_m5vk5"]
-[ext_resource type="PackedScene" uid="uid://dboelyqi07q4d" path="res://Scenes/Level0.tscn" id="2_a7dey"]
-[ext_resource type="PackedScene" uid="uid://bv6k0o0a7wx7i" path="res://Scenes/Zombie.tscn" id="3_ncs23"]
-[ext_resource type="PackedScene" uid="uid://0b6mssn7rwyt" path="res://Scenes/Mob_Spawner.tscn" id="4_wnaa8"]
-
-[sub_resource type="GDScript" id="GDScript_mglt4"]
+[ext_resource type="Script" path="res://scenes/SwitchSceneControler.gd" id="1_kotp1"]
+[ext_resource type="PackedScene" uid="uid://dboelyqi07q4d" path="res://scenes/Level0.tscn" id="2_r23qg"]
+[ext_resource type="PackedScene" uid="uid://drrltky7ish4o" path="res://scenes/Player.tscn" id="3_a0pmr"]
+[ext_resource type="PackedScene" uid="uid://bv6k0o0a7wx7i" path="res://scenes/Zombie.tscn" id="4_1fct7"]
+[ext_resource type="PackedScene" uid="uid://0b6mssn7rwyt" path="res://scenes/MobSpawner.tscn" id="5_ryt5c"]
 
 [node name="Game" type="Node2D"]
-script = SubResource("GDScript_mglt4")
+script = ExtResource("1_kotp1")
+scene_name = "Game"
 
-[node name="level0" parent="." instance=ExtResource("2_a7dey")]
+[node name="level0" parent="." instance=ExtResource("2_r23qg")]
 position = Vector2(-262, -296)
 
-[node name="Player" parent="." instance=ExtResource("1_m5vk5")]
+[node name="Player" parent="." instance=ExtResource("3_a0pmr")]
 
-[node name="Zombie" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_ncs23")]
+[node name="Zombie" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_1fct7")]
 position = Vector2(152, -68)
 target = NodePath("../Player")
 
-[node name="MobSpawner" parent="." instance=ExtResource("4_wnaa8")]
+[node name="MobSpawner" parent="." instance=ExtResource("5_ryt5c")]
 position = Vector2(-278, -325)
