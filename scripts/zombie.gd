@@ -36,7 +36,7 @@ func seeker_setup():
 		navigation_agent.target_position = target.global_position
 
 func _physics_process(_delta):
-	if is_alive:
+	if is_alive and player.paused == false:
 		if target:
 			navigation_agent.target_position = target.global_position
 		if navigation_agent.is_navigation_finished():	

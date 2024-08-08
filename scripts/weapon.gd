@@ -1,5 +1,7 @@
 extends Area2D
 
+@onready var player = $".."
+
 func _physics_process(_delta):
 	var _enemies_in_range = get_overlapping_bodies()
 	
@@ -12,8 +14,9 @@ func _physics_process(_delta):
 #
 #création d'un objet bullet
 func shoot():
-	const BULLET = preload("res://Scenes/Bullet.tscn")
-	var new_bullet = BULLET.instantiate()
-	new_bullet.global_position = %ShootingPoint.global_position
-	new_bullet.global_rotation = %ShootingPoint.global_rotation
-	%ShootingPoint.add_child(new_bullet)
+	if player.paused == false:
+		const BULLET = preload("res://Scenes/Bullet.tscn")
+		var new_bullet = BULLET.instantiate()
+		new_bullet.global_position = %ShootingPoint.global_position
+		new_bullet.global_rotation = %ShootingPoint.global_rotation
+		%ShootingPoint.add_child(new_bullet)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://drrltky7ish4o"]
+[gd_scene load_steps=39 format=3 uid="uid://drrltky7ish4o"]
 
 [ext_resource type="Texture2D" uid="uid://cccnl7g7264t6" path="res://sprites/player/Animation_cote.png" id="1_g0loc"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_wxidm"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://5rhayl1kfwuf" path="res://sprites/life bar/actual/7.png" id="22_xl7b5"]
 [ext_resource type="Texture2D" uid="uid://kyqw5qi1834k" path="res://sprites/life bar/actual/8.png" id="23_8eks6"]
 [ext_resource type="Texture2D" uid="uid://dkw31a8tnved4" path="res://sprites/life bar/actual/9.png" id="24_23gnq"]
+[ext_resource type="PackedScene" uid="uid://c60kdqaxbmplb" path="res://scenes/pause.tscn" id="25_bfmbp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cdnxw"]
 atlas = ExtResource("1_g0loc")
@@ -309,3 +310,7 @@ position = Vector2(-144, -95)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_xg20l")
 animation = &"6"
+
+[node name="Pause" parent="." instance=ExtResource("25_bfmbp")]
+visible = false
+position = Vector2(-61, -27)

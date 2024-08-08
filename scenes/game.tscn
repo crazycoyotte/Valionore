@@ -13,11 +13,11 @@ scene_name = "Game"
 [node name="level0" parent="." instance=ExtResource("2_r23qg")]
 position = Vector2(-262, -296)
 
-[node name="Player" parent="." instance=ExtResource("3_a0pmr")]
-
 [node name="Zombie" parent="." node_paths=PackedStringArray("target") instance=ExtResource("4_1fct7")]
 position = Vector2(152, -68)
 target = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource("3_a0pmr")]
 
 [node name="MobSpawner" parent="." instance=ExtResource("5_ryt5c")]
 position = Vector2(-278, -325)

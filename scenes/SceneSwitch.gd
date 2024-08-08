@@ -20,13 +20,22 @@ func handle_scene_changed(current_scene_name: String):
 	var next_scene_name: String
 	var next_scene
 	
-	if current_scene_name == "Menu":
-		next_scene_name = "CharacterChoice"
-	elif current_scene_name == "CharacterChoice":
-		next_scene_name = "Game"
-	else:
-		print("No valid scene to switch to")
-		return  # Aucun changement de scène n'est nécessaire
+	match current_scene_name:
+		"Menu":
+			next_scene_name = "CharacterChoice"
+		"CharacterChoice":
+			next_scene_name = "Game"
+		"Game":
+			next_scene_name = "Menu"
+	#if current_scene_name == "Menu":
+	#	next_scene_name = "CharacterChoice"
+	#elif current_scene_name == "CharacterChoice":
+	#	next_scene_name = "Game"
+	#elif current_scene_name == "Game":
+	#	next_scene_name = "Menu"
+	#else:
+	#	print("No valid scene to switch to")
+	#	return  # Aucun changement de scène n'est nécessaire
 	
 	print("Loading next scene: ", next_scene_name)
 	next_scene = load("res://scenes/" + next_scene_name + ".tscn").instantiate()

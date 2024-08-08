@@ -7,6 +7,9 @@ var life_max := 3
 var last_mouse_position_vector := Vector2(0,0)
 @onready var life_bar_max := $LifeBarMax
 @onready var life_bar_actual := $LifeBarActual
+@onready var pause_menu = $Pause
+var paused = false
+
 
 # fonction update
 func _physics_process(_delta):
@@ -44,6 +47,8 @@ func _physics_process(_delta):
 		
 	last_mouse_position_vector = actual_mouse_position_vector
 	
+	if Input.is_action_just_pressed("pause"):
+		pauseMenu()
 		
 func MovePlayer(direction):
 	velocity = direction * 100
@@ -55,13 +60,14 @@ func MovePlayer(direction):
 #Retour : rien
 #
 func OrientateWeapon(look_direction):
-	weapon.global_rotation = look_direction.angle()
-	if (look_direction.angle() > PI/2) or (look_direction.angle() < -PI/2):
-		weapon_sprite.flip_v = true
-		animated_sprite.flip_h = true
-	else : 
-		weapon_sprite.flip_v = false
-		animated_sprite.flip_h = false
+	if !paused:
+		weapon.global_rotation = look_direction.angle()
+		if (look_direction.angle() > PI/2) or (look_direction.angle() < -PI/2):
+			weapon_sprite.flip_v = true
+			animated_sprite.flip_h = true
+		else : 
+			weapon_sprite.flip_v = false
+			animated_sprite.flip_h = false
 
 # fonction faisant perdre un pv au joueur
 #Paramètres : aucun
@@ -73,3 +79,12 @@ func player_take_damage():
 	if life < 1:
 		get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
 
+func pauseMenu():
+	if paused:
+		pause_menu.hide()
+		Engine.time_scale = 1
+	else:
+		pause_menu.show()
+		Engine.time_scale = 0
+	
+	paused = !paused
