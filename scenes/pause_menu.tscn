@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bhkotem23eeo0"]
 
-[ext_resource type="Script" path="res://scenes/SwitchSceneControler.gd" id="1_ko1ve"]
+[ext_resource type="Script" path="res://scripts/SwitchSceneControler.gd" id="1_ko1ve"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3

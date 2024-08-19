@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c60kdqaxbmplb"]
 
-[ext_resource type="Script" path="res://scenes/Resume.gd" id="2_cayhv"]
+[ext_resource type="Script" path="res://scripts/Resume.gd" id="1_g7utu"]
 
 [node name="Pause" type="Node2D"]
 
@@ -14,7 +14,7 @@ layout_mode = 2
 [node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Reprendre"
-script = ExtResource("2_cayhv")
+script = ExtResource("1_g7utu")
 
 [node name="ToMainMenu" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

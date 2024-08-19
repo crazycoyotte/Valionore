@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dddt40eiyduu4"]
 
-[ext_resource type="Script" path="res://scenes/SwitchSceneControler.gd" id="1_kotp1"]
+[ext_resource type="Script" path="res://scripts/SwitchSceneControler.gd" id="1_kotp1"]
 [ext_resource type="PackedScene" uid="uid://dboelyqi07q4d" path="res://scenes/Level0.tscn" id="2_r23qg"]
 [ext_resource type="PackedScene" uid="uid://drrltky7ish4o" path="res://scenes/Player.tscn" id="3_a0pmr"]
 [ext_resource type="PackedScene" uid="uid://bv6k0o0a7wx7i" path="res://scenes/Zombie.tscn" id="4_1fct7"]
