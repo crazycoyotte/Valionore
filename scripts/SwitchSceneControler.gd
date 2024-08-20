@@ -11,7 +11,8 @@ var game_parameters: Dictionary = {
 	"player_strength" = 1,
 	"player_range" = 1,
 	"player_reload_time" = 2,
-	"player_life" = 3,
+	"player_actual_life" = 3,
+	"player_max_life" = 3,
 	"player_pos_x" = 0,
 	"player_pos_y" = 0,
 	"player_cell_x" = 0,
@@ -41,10 +42,19 @@ func _ready():
 			$Player/Pause/MarginContainer/VBoxContainer/ToMainMenu.connect("pressed", Callable(self, "_on_to_main_menu_pressed"))
 
 
-func load_parameters(new_game_parameters: Dictionary, new_options_parameters: Dictionary,):
+# fonction faisant le la mise à jour des paramètres
+#Paramètres : new_game_parameters: Dictionary, new_options_parameters: Dictionary
+#Retour : rien
+#
+func load_parameters(new_game_parameters: Dictionary, new_options_parameters: Dictionary):
 	game_parameters = new_game_parameters
 	options_parameters = new_options_parameters
 
+
+# fonction lors de l'appui sur le bouton start
+#Paramètres : rien
+#Retour : rien
+#
 func _on_start_pressed():
 	print("pressed - ", scene_name)
 	print("Emitting signal 'scene_changed' with: ", scene_name)
@@ -54,7 +64,8 @@ func _on_start_pressed():
 		game_parameters.player_strength = 1
 		game_parameters.player_range = 1
 		game_parameters.player_reload_time = 2
-		game_parameters.player_life = 3
+		game_parameters.player_actual_life = 3
+		game_parameters.player_max_life = 3
 		game_parameters.player_pos_x = 0
 		game_parameters.player_pos_y = 0
 		game_parameters.player_cell_x = 0
@@ -63,20 +74,36 @@ func _on_start_pressed():
 	change_scene()
 
 
+# fonction lors de l'appui sur le bouton harpon
+#Paramètres : rien
+#Retour : rien
+#
 func _on_button_harpon_pressed():
 	game_parameters.player_class = "harpon"
 	player_class_label.text = game_parameters.player_class
 
 
+# fonction lors de l'appui sur le bouton épée
+#Paramètres : rien
+#Retour : rien
+#
 func _on_button_epee_pressed():
 	game_parameters.player_class = "epee"
 	player_class_label.text = game_parameters.player_class
 
 
+# fonction lors de l'appui sur le bouton Main Menu
+#Paramètres : rien
+#Retour : rien
+#
 func _on_to_main_menu_pressed():
 	next_scene_name = "Menu"
 	change_scene()
 
 
+# fonction lançant le changement de scène
+#Paramètres : rien
+#Retour : rien
+#
 func change_scene():
 	emit_signal("scene_changed", scene_name, next_scene_name)

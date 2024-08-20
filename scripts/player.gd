@@ -50,6 +50,11 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("pause"):
 		pauseMenu()
 		
+
+# fonction déplaçant le personnage
+#Paramètres : direction (vector2)
+#Retour : rien
+#
 func MovePlayer(direction):
 	velocity = direction * 100
 	move_and_slide()
@@ -79,6 +84,11 @@ func player_take_damage():
 	if life < 1:
 		get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
 
+
+# fonction mettant le jeu en pause
+#Paramètres : aucun
+#Retour : rien
+#
 func pauseMenu():
 	if paused:
 		pause_menu.hide()
