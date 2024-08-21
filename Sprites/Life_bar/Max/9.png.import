@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6r6cf15slvd8"
-path="res://.godot/imported/3.png-7d242f538507994792cc45fccd7b5616.ctex"
+uid="uid://b6bpqyhrkqyj6"
+path="res://.godot/imported/9.png-70c42f64e0a88815f29aa2730aae321d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/life bar/actual/3.png"
-dest_files=["res://.godot/imported/3.png-7d242f538507994792cc45fccd7b5616.ctex"]
+source_file="res://Sprites/Life_bar/Max/9.png"
+dest_files=["res://.godot/imported/9.png-70c42f64e0a88815f29aa2730aae321d.ctex"]
 
 [params]
 

@@ -2,7 +2,7 @@ extends Button
 
 @onready var player = $"../../../../"
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_pressed("pause"):
 		grab_focus()
 	
