@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://bv6k0o0a7wx7i" path="res://Scenes/Zombie.tscn" id="4_1fct7"]
 [ext_resource type="PackedScene" uid="uid://0b6mssn7rwyt" path="res://Scenes/MobSpawner.tscn" id="5_ryt5c"]
 
-
 [node name="Game" type="Node2D"]
 script = ExtResource("1_kotp1")
 scene_name = "Game"
