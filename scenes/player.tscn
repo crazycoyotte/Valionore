@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://c60kdqaxbmplb" path="res://Scenes/Pause.tscn" id="25_bfmbp"]
 
 
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_cdnxw"]
 atlas = ExtResource("1_g0loc")
 region = Rect2(0, 0, 32, 32)
