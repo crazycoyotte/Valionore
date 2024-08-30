@@ -48,4 +48,4 @@ func handle_scene_changed(current_scene_name: String, next_scene_name: String):
 #Retour : rien
 #
 func transfer_data_between_scenes(old_scene, new_scene):
-	new_scene.load_parameters(old_scene.game_parameters, old_scene.options_parameters)
+	new_scene.load_parameters(old_scene.player_parameters, old_scene.options_parameters, old_scene.game_parameters)

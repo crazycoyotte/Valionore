@@ -6,7 +6,7 @@ signal scene_changed(scene_name)
 var next_scene_name: String = ""
 @onready var player_class_label = $PlayerClass
 
-var game_parameters: Dictionary = {
+var player_parameters: Dictionary = {
 	"player_class" = "harpon",
 	"player_strength" = 1,
 	"player_range" = 1,
@@ -24,6 +24,10 @@ var options_parameters: Dictionary = {
 	"effects_vol" = 100
 }
 
+var game_parameters: Dictionary = {
+	"is_paused" = false
+}
+
 func _ready():
 	print("SwitchSceneControler _ready called")
 
@@ -35,21 +39,22 @@ func _ready():
 	if (scene_name == "CharacterChoice"):
 		if !$Start.is_connected("pressed", Callable(self, "_on_start_pressed")):
 			$Start.connect("pressed", Callable(self, "_on_start_pressed"))
-			player_class_label.text = game_parameters.player_class
+			player_class_label.text = player_parameters.player_class
 	
 	if (scene_name == "Game"):
 		if !$Player/Pause/MarginContainer/VBoxContainer/ToMainMenu.is_connected("pressed", Callable(self, "_on_to_main_menu_pressed")):
 			$Player/Pause/MarginContainer/VBoxContainer/ToMainMenu.connect("pressed", Callable(self, "_on_to_main_menu_pressed"))
 
 
-# fonction faisant le la mise à jour des paramètres
-#Paramètres : new_game_parameters: Dictionary, new_options_parameters: Dictionary
+# fonction faisant la mise à jour des paramètres
+#Paramètres : new_game_parameters: Dictionary, new_options_parameters: Dictionary, new_game_parameters : Dictionary
 #Retour : rien
 #
-func load_parameters(new_game_parameters: Dictionary, new_options_parameters: Dictionary):
-	game_parameters = new_game_parameters
+func load_parameters(new_player_parameters: Dictionary, new_options_parameters: Dictionary, new_game_parameters : Dictionary):
+	player_parameters = new_player_parameters
 	options_parameters = new_options_parameters
-
+	game_parameters = new_game_parameters
+	
 
 # fonction lors de l'appui sur le bouton start
 #Paramètres : rien
@@ -61,15 +66,15 @@ func _on_start_pressed():
 	if scene_name == "Menu":
 		next_scene_name = "CharacterChoice"
 	if scene_name == "CharacterChoice":
-		game_parameters.player_strength = 1
-		game_parameters.player_range = 1
-		game_parameters.player_reload_time = 2
-		game_parameters.player_actual_life = 3
-		game_parameters.player_max_life = 3
-		game_parameters.player_pos_x = 0
-		game_parameters.player_pos_y = 0
-		game_parameters.player_cell_x = 0
-		game_parameters.player_cell_y = 0
+		player_parameters.player_strength = 1
+		player_parameters.player_range = 1
+		player_parameters.player_reload_time = 2
+		player_parameters.player_actual_life = 3
+		player_parameters.player_max_life = 3
+		player_parameters.player_pos_x = 0
+		player_parameters.player_pos_y = 0
+		player_parameters.player_cell_x = 0
+		player_parameters.player_cell_y = 0
 		next_scene_name = "Game"
 	change_scene()
 
@@ -79,8 +84,8 @@ func _on_start_pressed():
 #Retour : rien
 #
 func _on_button_harpon_pressed():
-	game_parameters.player_class = "harpon"
-	player_class_label.text = game_parameters.player_class
+	player_parameters.player_class = "harpon"
+	player_class_label.text = player_parameters.player_class
 
 
 # fonction lors de l'appui sur le bouton épée
@@ -88,8 +93,8 @@ func _on_button_harpon_pressed():
 #Retour : rien
 #
 func _on_button_epee_pressed():
-	game_parameters.player_class = "epee"
-	player_class_label.text = game_parameters.player_class
+	player_parameters.player_class = "epee"
+	player_class_label.text = player_parameters.player_class
 
 
 # fonction lors de l'appui sur le bouton Main Menu
@@ -99,6 +104,7 @@ func _on_button_epee_pressed():
 func _on_to_main_menu_pressed():
 	next_scene_name = "Menu"
 	change_scene()
+
 
 
 # fonction lançant le changement de scène

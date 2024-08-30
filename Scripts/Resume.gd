@@ -8,3 +8,7 @@ func _process(_delta):
 	
 func _on_resume_pressed():
 	player.pauseMenu()
+
+
+func _on_to_main_menu_pressed():
+	Engine.time_scale = 1

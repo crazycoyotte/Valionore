@@ -22,3 +22,4 @@ text = "Menu principal"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="MarginContainer/VBoxContainer/Resume" method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ToMainMenu" to="." method="_on_to_main_menu_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ToMainMenu" to="MarginContainer/VBoxContainer/Resume" method="_on_to_main_menu_pressed"]
