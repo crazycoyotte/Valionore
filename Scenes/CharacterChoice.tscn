@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://ce4npbnuxwjxj"]
+[gd_scene load_steps=11 format=3 uid="uid://ce4npbnuxwjxj"]
 
 [ext_resource type="Script" path="res://scripts/SwitchSceneControler.gd" id="1_0wbnk"]
 [ext_resource type="Texture2D" uid="uid://cccnl7g7264t6" path="res://sprites/Player/Animation_cote.png" id="1_qfmic"]
 [ext_resource type="Texture2D" uid="uid://bc12gp3063ia3" path="res://sprites/Player/Paladin.png" id="2_7f84y"]
 [ext_resource type="Script" path="res://scripts/ButtonGrabFocus.gd" id="3_nwqyf"]
+[ext_resource type="Script" path="res://scenes/CharacterChoiceBox.gd" id="3_xaojf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m2d4k"]
 atlas = ExtResource("1_qfmic")
@@ -54,20 +55,21 @@ offset_bottom = 548.0
 text = "Play"
 script = ExtResource("3_nwqyf")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="CharacterChoiceBox" type="VBoxContainer" parent="."]
 offset_left = 428.0
 offset_top = 444.0
 offset_right = 495.0
 offset_bottom = 510.0
 scale = Vector2(1.2, 1)
+script = ExtResource("3_xaojf")
 
-[node name="Harpon" type="AnimatedSprite2D" parent="VBoxContainer"]
+[node name="Harpon" type="AnimatedSprite2D" parent="CharacterChoiceBox"]
 position = Vector2(25, -68)
 scale = Vector2(4.16667, 5)
 sprite_frames = SubResource("SpriteFrames_dj0s8")
 autoplay = "default"
 
-[node name="ButtonHarpon" type="Button" parent="VBoxContainer/Harpon"]
+[node name="ButtonHarpon" type="Button" parent="CharacterChoiceBox/Harpon"]
 offset_left = -5.99999
 offset_top = 13.6
 offset_right = 61.0
@@ -76,12 +78,12 @@ scale = Vector2(0.226812, 0.221496)
 text = "Harpon"
 script = ExtResource("3_nwqyf")
 
-[node name="Chevalier" type="AnimatedSprite2D" parent="VBoxContainer"]
+[node name="Chevalier" type="AnimatedSprite2D" parent="CharacterChoiceBox"]
 position = Vector2(247.5, -64)
 scale = Vector2(4.16667, 5)
 sprite_frames = SubResource("SpriteFrames_cpc4h")
 
-[node name="ButtonEpee" type="Button" parent="VBoxContainer/Chevalier"]
+[node name="ButtonEpee" type="Button" parent="CharacterChoiceBox/Chevalier"]
 offset_left = -8.6
 offset_top = 12.8
 offset_right = 58.4
@@ -95,5 +97,7 @@ offset_top = 126.0
 offset_right = 766.0
 offset_bottom = 206.0
 
-[connection signal="pressed" from="VBoxContainer/Harpon/ButtonHarpon" to="." method="_on_button_harpon_pressed"]
-[connection signal="pressed" from="VBoxContainer/Chevalier/ButtonEpee" to="." method="_on_button_epee_pressed"]
+[connection signal="pressed" from="CharacterChoiceBox/Harpon/ButtonHarpon" to="." method="_on_button_harpon_pressed"]
+[connection signal="pressed" from="CharacterChoiceBox/Harpon/ButtonHarpon" to="CharacterChoiceBox" method="_on_button_harpon_pressed"]
+[connection signal="pressed" from="CharacterChoiceBox/Chevalier/ButtonEpee" to="." method="_on_button_epee_pressed"]
+[connection signal="pressed" from="CharacterChoiceBox/Chevalier/ButtonEpee" to="CharacterChoiceBox" method="_on_button_epee_pressed"]

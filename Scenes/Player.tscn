@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://5rhayl1kfwuf" path="res://sprites/Life_bar/Actual/7.png" id="22_xl7b5"]
 [ext_resource type="Texture2D" uid="uid://kyqw5qi1834k" path="res://sprites/Life_bar/Actual/8.png" id="23_8eks6"]
 [ext_resource type="Texture2D" uid="uid://dkw31a8tnved4" path="res://sprites/Life_bar/Actual/9.png" id="24_23gnq"]
-[ext_resource type="PackedScene" uid="uid://c60kdqaxbmplb" path="res://scenes/pause.tscn" id="25_bfmbp"]
+[ext_resource type="PackedScene" uid="uid://c60kdqaxbmplb" path="res://scenes/Pause.tscn" id="25_bfmbp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cdnxw"]
 atlas = ExtResource("1_g0loc")

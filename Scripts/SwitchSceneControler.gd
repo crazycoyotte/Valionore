@@ -4,15 +4,15 @@ signal scene_changed(scene_name)
 
 @export var scene_name: String = "Menu"
 var next_scene_name: String = ""
-@onready var player_class_label = $PlayerClass
+#@onready var player_class_label = $PlayerClass
 
 var player_parameters: Dictionary = {
 	"player_class" = "harpon",
 	"player_strength" = 1,
 	"player_range" = 1,
 	"player_reload_time" = 2,
-	"player_actual_life" = 3,
-	"player_max_life" = 3,
+	"player_actual_life" = 1,
+	"player_max_life" = 2,
 	"player_pos_x" = 0,
 	"player_pos_y" = 0,
 	"player_cell_x" = 0,
@@ -37,6 +37,7 @@ func _ready():
 			$MenuBox/Sprite2D/MarginContainer/VBoxContainer/Start.connect("pressed", Callable(self, "_on_start_pressed"))
 	
 	if (scene_name == "CharacterChoice"):
+		var player_class_label = $PlayerClass
 		if !$Start.is_connected("pressed", Callable(self, "_on_start_pressed")):
 			$Start.connect("pressed", Callable(self, "_on_start_pressed"))
 			player_class_label.text = player_parameters.player_class
@@ -79,22 +80,7 @@ func _on_start_pressed():
 	change_scene()
 
 
-# fonction lors de l'appui sur le bouton harpon
-#Paramètres : rien
-#Retour : rien
-#
-func _on_button_harpon_pressed():
-	player_parameters.player_class = "harpon"
-	player_class_label.text = player_parameters.player_class
 
-
-# fonction lors de l'appui sur le bouton épée
-#Paramètres : rien
-#Retour : rien
-#
-func _on_button_epee_pressed():
-	player_parameters.player_class = "epee"
-	player_class_label.text = player_parameters.player_class
 
 
 # fonction lors de l'appui sur le bouton Main Menu

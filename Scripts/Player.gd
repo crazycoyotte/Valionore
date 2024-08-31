@@ -2,8 +2,9 @@ extends CharacterBody2D
 @onready var animated_sprite := $AnimatedSprite2D
 @onready var weapon := $Weapon
 @onready var weapon_sprite := $Weapon/Weapon_pivot/Shotgun
-var life := 3
-var life_max := 3
+@onready var game := $"../"
+@onready var life : int = game.player_parameters.player_actual_life
+@onready var life_max : int = game.player_parameters.player_max_life
 var last_mouse_position_vector := Vector2(0,0)
 @onready var life_bar_max := $LifeBarMax
 @onready var life_bar_actual := $LifeBarActual
