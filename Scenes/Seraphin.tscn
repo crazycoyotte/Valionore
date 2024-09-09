@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgm8ewp3vgas4"]
+
+[ext_resource type="Texture2D" uid="uid://bo2rewy1pgipw" path="res://Sprites/Spirit_boss/Seraphin.png" id="1_60c4f"]
+
+
+[node name="Boss" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_60c4f")
