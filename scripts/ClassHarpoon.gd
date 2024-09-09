@@ -5,7 +5,7 @@ extends Node2D
 @onready var weapon := $Weapon
 var last_mouse_position_vector := Vector2(0,0)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	
 	# si le joueur vise
 	var look_direction := Vector2(0,0)

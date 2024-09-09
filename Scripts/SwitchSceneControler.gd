@@ -1,6 +1,6 @@
 extends Node2D
 
-signal scene_changed(scene_name)
+signal scene_changed(_scene_name)
 
 @export var scene_name: String = "Menu"
 var next_scene_name: String = ""

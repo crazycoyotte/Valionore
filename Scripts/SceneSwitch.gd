@@ -30,7 +30,7 @@ func handle_scene_changed(current_scene_name: String, next_scene_name: String):
 	print("handle_scene_changed called with: ", current_scene_name)
 	var next_scene
 	print("Loading next scene: ", next_scene_name)
-	next_scene = load("res://scenes/" + next_scene_name + ".tscn").instantiate()
+	next_scene = load("res://Scenes/" + next_scene_name + ".tscn").instantiate()
 	transfer_data_between_scenes(current_scene, next_scene)
 	if next_scene == null:
 		print("Failed to load scene: ", next_scene_name)
