@@ -39,7 +39,7 @@ func _physics_process(_delta):
 	if is_alive and player.paused == false:
 		if target:
 			navigation_agent.target_position = target.global_position
-		if navigation_agent.is_navigation_finished():	
+		if navigation_agent.distance_to_target() < 15:	
 			type_of_animation = "attack"
 			# génère une erreur et le jeu fonctionne sans problème sans ça, à voir
 			#await 2
@@ -88,9 +88,13 @@ func deal_damage_to_target():
 		target.player_take_damage()
 		
 func _on_animated_sprite_2d_animation_finished():
-	print("ok")
 	if type_of_animation == "attack":
 		deal_damage_to_target()
+
+
+func _on_body_entered(body):
+	if body.has_method("player_take_damage()"): 
+		type_of_animation = "attack"
 
 # fonction jouant l'animation
 #Paramètres : l'orientation du personnage (string), type d'animation (string)
@@ -126,6 +130,3 @@ func play_animation(orientation, type):
 			AnimatedSprite.play("DeathBack")
 		if orientation == "down":
 			AnimatedSprite.play("DeathFront")
-
-
-

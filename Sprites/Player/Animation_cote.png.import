@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cccnl7g7264t6"
-path="res://.godot/imported/Animation_cote.png-8d7e9fa753cab0c050cf3b68f46136bc.ctex"
+path="res://.godot/imported/Animation_cote.png-160998eb87a741a85dc148b41cba7cf6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/Animation_cote.png"
-dest_files=["res://.godot/imported/Animation_cote.png-8d7e9fa753cab0c050cf3b68f46136bc.ctex"]
+source_file="res://sprites/Player/Animation_cote.png"
+dest_files=["res://.godot/imported/Animation_cote.png-160998eb87a741a85dc148b41cba7cf6.ctex"]
 
 [params]
 

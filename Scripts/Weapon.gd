@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var player = $".."
+@onready var player = $"../../../"
 
 func _physics_process(_delta):
 	var _enemies_in_range = get_overlapping_bodies()

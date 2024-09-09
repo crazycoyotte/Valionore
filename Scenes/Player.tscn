@@ -1,8 +1,7 @@
-[gd_scene load_steps=39 format=3 uid="uid://drrltky7ish4o"]
+[gd_scene load_steps=28 format=3 uid="uid://drrltky7ish4o"]
 
-[ext_resource type="Texture2D" uid="uid://cccnl7g7264t6" path="res://sprites/Player/Animation_cote.png" id="1_g0loc"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_wxidm"]
-[ext_resource type="PackedScene" uid="uid://cbngnrpg7cnjf" path="res://scenes/weapon.tscn" id="3_qavc8"]
+[ext_resource type="PackedScene" uid="uid://cu0je6im8b52b" path="res://scenes/ClassManager.tscn" id="2_cmi5j"]
 [ext_resource type="Texture2D" uid="uid://bwuyxmp4sjfmp" path="res://sprites/Life_bar/Max/1.png" id="4_mwxp8"]
 [ext_resource type="Texture2D" uid="uid://bwjfx5e8v8s0v" path="res://sprites/Life_bar/Max/10.png" id="5_y1j0y"]
 [ext_resource type="Texture2D" uid="uid://egnrdpybtv65" path="res://sprites/Life_bar/Max/2.png" id="6_ntl8u"]
@@ -24,83 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://5rhayl1kfwuf" path="res://sprites/Life_bar/Actual/7.png" id="22_xl7b5"]
 [ext_resource type="Texture2D" uid="uid://kyqw5qi1834k" path="res://sprites/Life_bar/Actual/8.png" id="23_8eks6"]
 [ext_resource type="Texture2D" uid="uid://dkw31a8tnved4" path="res://sprites/Life_bar/Actual/9.png" id="24_23gnq"]
-[ext_resource type="PackedScene" uid="uid://c60kdqaxbmplb" path="res://scenes/Pause.tscn" id="25_bfmbp"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cdnxw"]
-atlas = ExtResource("1_g0loc")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_su8dn"]
-atlas = ExtResource("1_g0loc")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1v015"]
-atlas = ExtResource("1_g0loc")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sjfyx"]
-atlas = ExtResource("1_g0loc")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cnais"]
-atlas = ExtResource("1_g0loc")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7geh1"]
-atlas = ExtResource("1_g0loc")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y0mak"]
-atlas = ExtResource("1_g0loc")
-region = Rect2(160, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7rmey"]
-atlas = ExtResource("1_g0loc")
-region = Rect2(192, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4drly"]
-atlas = ExtResource("1_g0loc")
-region = Rect2(224, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_01vn8"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cdnxw")
-}],
-"loop": true,
-"name": &"Idle",
-"speed": 2.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_su8dn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1v015")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sjfyx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cnais")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7geh1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y0mak")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7rmey")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4drly")
-}],
-"loop": true,
-"name": &"WalkingRight",
-"speed": 10.0
-}]
+[ext_resource type="PackedScene" uid="uid://c60kdqaxbmplb" path="res://scenes/pause.tscn" id="25_bfmbp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5k4cx"]
 radius = 5.0
@@ -284,11 +207,7 @@ animations = [{
 position = Vector2(0, -6)
 script = ExtResource("1_wxidm")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -3)
-sprite_frames = SubResource("SpriteFrames_01vn8")
-animation = &"WalkingRight"
-autoplay = "Idle"
+[node name="ClassManager" parent="." instance=ExtResource("2_cmi5j")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
@@ -296,8 +215,6 @@ shape = SubResource("CapsuleShape2D_5k4cx")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
-
-[node name="Weapon" parent="." instance=ExtResource("3_qavc8")]
 
 [node name="LifeBarMax" type="AnimatedSprite2D" parent="."]
 position = Vector2(-144, -95)
