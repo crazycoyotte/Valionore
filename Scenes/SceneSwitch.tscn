@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://lsn2rdwfsf1n"]
 
 [ext_resource type="Script" path="res://scripts/SceneSwitch.gd" id="1_plmvf"]
-[ext_resource type="PackedScene" uid="uid://t2norfbrf3rx" path="res://scenes/Menu.tscn" id="2_dblm6"]
+[ext_resource type="PackedScene" uid="uid://t2norfbrf3rx" path="res://Scenes/Menu.tscn" id="2_dblm6"]
 
 [node name="SceneSwitch" type="Node"]
 script = ExtResource("1_plmvf")
