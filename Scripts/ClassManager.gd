@@ -5,10 +5,13 @@ extends Node2D
 func _ready() -> void:
 	print("class du joueur : ", game.player_parameters.player_class)
 	if game.player_parameters.player_class == "harpon":
-			var player_sprite = preload("res://Scenes/ClassHarpoon.tscn")
-			var new_bullet = player_sprite.instantiate()
-			add_child(new_bullet)
-		
+			var player_sprite = preload("res://scenes/ClassHarpoon.tscn")
+			var sprite_to_load = player_sprite.instantiate()
+			add_child(sprite_to_load)
+	if game.player_parameters.player_class == "epee":
+			var player_sprite = preload("res://scenes/ClassEpee.tscn")
+			var sprite_to_load = player_sprite.instantiate()
+			add_child(sprite_to_load)
 
 func _physics_process(_delta: float) -> void:
 	pass

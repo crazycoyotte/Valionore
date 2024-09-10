@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://cwjokcjcbn0r7"]
+
+[ext_resource type="Script" path="res://scripts/ClassEpee.gd" id="1_46v8b"]
+[ext_resource type="Texture2D" uid="uid://bc12gp3063ia3" path="res://sprites/Player/Paladin.png" id="2_cdj03"]
+[ext_resource type="PackedScene" uid="uid://bqj7a5iudj64g" path="res://scenes/WeaponEpee.tscn" id="3_onwoe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y54lu"]
+atlas = ExtResource("2_cdj03")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7jpe"]
+atlas = ExtResource("2_cdj03")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r11ln"]
+atlas = ExtResource("2_cdj03")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4uqj"]
+atlas = ExtResource("2_cdj03")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28x6q"]
+atlas = ExtResource("2_cdj03")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jabuo"]
+atlas = ExtResource("2_cdj03")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1me2c"]
+atlas = ExtResource("2_cdj03")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_at4u5"]
+atlas = ExtResource("2_cdj03")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tield"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y54lu")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7jpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r11ln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4uqj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28x6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jabuo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1me2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_at4u5")
+}],
+"loop": true,
+"name": &"WalkingRight",
+"speed": 10.0
+}]
+
+[node name="ClassEpee" type="Node2D"]
+script = ExtResource("1_46v8b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_tield")
+animation = &"WalkingRight"
+
+[node name="WeaponEpee" parent="." instance=ExtResource("3_onwoe")]
+position = Vector2(3, 5)

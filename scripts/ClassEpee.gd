@@ -1,8 +1,8 @@
 extends Node2D
 @onready var class_manager = $"../"
-@onready var weapon_sprite := $WeaponHarpon/Weapon_pivot/Shotgun
+@onready var weapon_sprite := $WeaponEpee/Weapon_pivot/Sword
 @onready var animated_sprite := $AnimatedSprite2D
-@onready var weapon := $WeaponHarpon
+@onready var weapon := $WeaponEpee
 var last_mouse_position_vector := Vector2(0,0)
 
 func _physics_process(_delta: float) -> void:
@@ -39,6 +39,8 @@ func OrientateWeapon(look_direction):
 		if (look_direction.angle() > PI/2) or (look_direction.angle() < -PI/2):
 			weapon_sprite.flip_v = true
 			animated_sprite.flip_h = true
+			weapon.position.x = -3
 		else : 
 			weapon_sprite.flip_v = false
 			animated_sprite.flip_h = false
+			weapon.position.x = 3

@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://b4yf7658itclt"]
+[gd_scene load_steps=15 format=3 uid="uid://b4yf7658itclt"]
 
 [ext_resource type="Script" path="res://scripts/ClassHarpoon.gd" id="1_1lgij"]
 [ext_resource type="Texture2D" uid="uid://cccnl7g7264t6" path="res://sprites/Player/Animation_cote.png" id="1_p425d"]
-[ext_resource type="PackedScene" uid="uid://bdnsbl3e2m234" path="res://scenes/weapon.tscn" id="2_t10vo"]
+[ext_resource type="PackedScene" uid="uid://bdnsbl3e2m234" path="res://scenes/WeaponHarpon.tscn" id="2_t10vo"]
+[ext_resource type="Script" path="res://scripts/WeaponHarpon.gd" id="4_b2wv8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cdnxw"]
 atlas = ExtResource("1_p425d")
@@ -86,7 +87,8 @@ script = ExtResource("1_1lgij")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_b6uu4")
-animation = &"Idle"
+animation = &"WalkingRight"
 autoplay = "Idle"
 
-[node name="Weapon" parent="." instance=ExtResource("2_t10vo")]
+[node name="WeaponHarpon" parent="." instance=ExtResource("2_t10vo")]
+script = ExtResource("4_b2wv8")
