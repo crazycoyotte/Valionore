@@ -1,10 +1,11 @@
 [gd_scene load_steps=128 format=3 uid="uid://bv6k0o0a7wx7i"]
 
-[ext_resource type="Texture2D" uid="uid://bxf8fain0umef" path="res://sprites/Zombie/Idle.png" id="1_ed4ko"]
+[ext_resource type="Texture2D" uid="uid://bxf8fain0umef" path="res://Sprites/Zombie/Idle.png" id="1_ed4ko"]
 [ext_resource type="Script" path="res://Scripts/Zombie.gd" id="1_rjh12"]
-[ext_resource type="Texture2D" uid="uid://6unf88oqp86q" path="res://sprites/Zombie/Attack.png" id="1_wucov"]
-[ext_resource type="Texture2D" uid="uid://bu67222g6yos5" path="res://sprites/Zombie/Walk.png" id="2_ejw87"]
-[ext_resource type="Texture2D" uid="uid://ccqqayg415plt" path="res://sprites/Zombie/Death.png" id="2_v2aaw"]
+[ext_resource type="Texture2D" uid="uid://6unf88oqp86q" path="res://Sprites/Zombie/Attack.png" id="1_wucov"]
+[ext_resource type="Texture2D" uid="uid://bu67222g6yos5" path="res://Sprites/Zombie/Walk.png" id="2_ejw87"]
+[ext_resource type="Texture2D" uid="uid://ccqqayg415plt" path="res://Sprites/Zombie/Death.png" id="2_v2aaw"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y1xx3"]
 atlas = ExtResource("1_wucov")

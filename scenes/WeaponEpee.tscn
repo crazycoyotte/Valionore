@@ -1,8 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bqj7a5iudj64g"]
 
-[ext_resource type="Script" path="res://scripts/WeaponEpee.gd" id="1_cdu8b"]
-[ext_resource type="Texture2D" uid="uid://dsjehcqvgt5nw" path="res://sprites/Crosshair.png" id="2_rkd7k"]
-[ext_resource type="Texture2D" uid="uid://cr5tn2mpuwgv" path="res://sprites/weapon/Sword2.png" id="3_u8ofd"]
+[ext_resource type="Script" path="res://Scripts/WeaponEpee.gd" id="1_cdu8b"]
+[ext_resource type="Texture2D" uid="uid://dsjehcqvgt5nw" path="res://Sprites/Crosshair.png" id="2_rkd7k"]
+[ext_resource type="Texture2D" uid="uid://cr5tn2mpuwgv" path="res://Sprites/Weapon/Sword2.png" id="3_u8ofd"]
+
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f3knd"]
 radius = 128.016

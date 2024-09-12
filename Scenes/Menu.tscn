@@ -1,9 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://t2norfbrf3rx"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_37bpi"]
-[ext_resource type="Script" path="res://scripts/SwitchSceneControler.gd" id="1_sp7kh"]
-[ext_resource type="Texture2D" uid="uid://c5djkrc33vxxb" path="res://sprites/Image_titre.jpg" id="2_ef0u7"]
-[ext_resource type="Script" path="res://scripts/ButtonGrabFocus.gd" id="3_hovhf"]
+[ext_resource type="Script" path="res://Scripts/SwitchSceneControler.gd" id="1_sp7kh"]
+[ext_resource type="Texture2D" uid="uid://c5djkrc33vxxb" path="res://Sprites/Image_titre.jpg" id="2_ef0u7"]
+[ext_resource type="Script" path="res://Scripts/ButtonGrabFocus.gd" id="3_hovhf"]
+
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_sp7kh")
