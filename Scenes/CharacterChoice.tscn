@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://ce4npbnuxwjxj"]
 
 [ext_resource type="Script" path="res://Scripts/SwitchSceneControler.gd" id="1_0wbnk"]
-[ext_resource type="Texture2D" uid="uid://cccnl7g7264t6" path="res://Sprites/Player/Animation_cote.png" id="1_qfmic"]
-[ext_resource type="Texture2D" uid="uid://bc12gp3063ia3" path="res://Sprites/Player/Paladin.png" id="2_7f84y"]
+[ext_resource type="Texture2D" uid="uid://cccnl7g7264t6" path="res://sprites/Player/Animation_cote.png" id="1_qfmic"]
+[ext_resource type="Texture2D" uid="uid://bc12gp3063ia3" path="res://sprites/Player/Paladin.png" id="2_7f84y"]
 [ext_resource type="Script" path="res://Scripts/ButtonGrabFocus.gd" id="3_nwqyf"]
 [ext_resource type="Script" path="res://Scripts/CharacterChoiceBox.gd" id="3_ot8r0"]
 
@@ -45,6 +45,7 @@ animations = [{
 
 [node name="CharacterChoice" type="Node2D"]
 script = ExtResource("1_0wbnk")
+scene_name = "CharacterChoice"
 
 [node name="Start" type="Button" parent="."]
 offset_left = 505.0

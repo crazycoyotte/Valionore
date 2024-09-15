@@ -31,12 +31,14 @@ func handle_scene_changed(current_scene_name: String, next_scene_name: String):
 	var next_scene
 	print("Loading next scene: ", next_scene_name)
 	next_scene = load("res://Scenes/" + next_scene_name + ".tscn").instantiate()
+	print(next_scene_name + " instantiate : OK")
 	transfer_data_between_scenes(current_scene, next_scene)
 	if next_scene == null:
 		print("Failed to load scene: ", next_scene_name)
 		return
 
 	add_child(next_scene)
+	print(next_scene_name + " child creation : OK")
 	current_scene.queue_free()
 	current_scene = next_scene
 	# Connecter le signal pour la nouvelle scène

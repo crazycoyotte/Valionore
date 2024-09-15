@@ -1,9 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://cwjokcjcbn0r7"]
 
 [ext_resource type="Script" path="res://Scripts/ClassEpee.gd" id="1_46v8b"]
-[ext_resource type="Texture2D" uid="uid://bc12gp3063ia3" path="res://Sprites/Player/Paladin.png" id="2_cdj03"]
-[ext_resource type="PackedScene" uid="uid://bqj7a5iudj64g" path="res://Scenes/WeaponEpee.tscn" id="3_onwoe"]
-
+[ext_resource type="Texture2D" uid="uid://bc12gp3063ia3" path="res://sprites/Player/Paladin.png" id="2_cdj03"]
+[ext_resource type="PackedScene" uid="uid://bqj7a5iudj64g" path="res://scenes/WeaponEpee.tscn" id="3_onwoe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y54lu"]
 atlas = ExtResource("2_cdj03")
