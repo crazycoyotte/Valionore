@@ -3,5 +3,6 @@
 [ext_resource type="Script" path="res://Scripts/Mob_Spawner.gd" id="1_ge4df"]
 
 
+
 [node name="MobSpawner" type="Node2D"]
 script = ExtResource("1_ge4df")

@@ -1,7 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cw4xnikx6eo7q"]
 
 [ext_resource type="Script" path="res://Scripts/Bullet.gd" id="1_bs77b"]
-[ext_resource type="Texture2D" uid="uid://datg860p2juh4" path="res://sprites/weapon/arrow_01e.png" id="2_woecw"]
+[ext_resource type="Texture2D" uid="uid://datg860p2juh4" path="res://Sprites/Weapon/Arrow_01e.png" id="2_woecw"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tqyvm"]
 size = Vector2(9.83873, 3.15815)
